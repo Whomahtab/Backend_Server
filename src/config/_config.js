@@ -6,5 +6,5 @@ const _config = {
     DB_URL: process.env.DB_URL,
 }
 
-console.log("App Port From Config File..", _config.DB_URL);
+console.log("App DB URL From Config File..", _config.DB_URL);
 export { _config as config }

@@ -14,8 +14,7 @@ try {
 }
 
 
-
 // app Running on Defined PORT..
-app.listen(PORT, () => {
-    console.log(`App is Running On Port ${PORT} `);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`App is Running On Port  http://localhost:${PORT} `);
 })
