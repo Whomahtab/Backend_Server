@@ -2,9 +2,8 @@ import app from "./src/app.js";
 import connectDb from "./src/config/db.js";
 import { config } from "./src/config/_config.js";
 
-
 // Set Default Port in case Of Failure
-const PORT = config.APP_PORT | 3002
+const PORT = config.APP_PORT || 3002
 
 // Connect With Database
 try {

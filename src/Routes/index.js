@@ -1,6 +1,6 @@
 import express from "express";
-// Import all the controller and place them 
 import { CheckAvailability, setAvailability } from '../AvailibiltyCheck/areaPinController.js'
+import { RegisterUser, UpdateUser } from "../Users/userController.js";
 
 
 
@@ -8,15 +8,16 @@ import { CheckAvailability, setAvailability } from '../AvailibiltyCheck/areaPinC
 const Route = express.Router();
 
 // Check status through PIN CODE
-Route.get('/checkAvail', CheckAvailability)
+Route.post('/check-status', CheckAvailability)
 
 // Set New area PIN code via Admin..
 Route.post('/checkAvail', setAvailability)
 
 
-Route.get('/', (req, res, next) => {
-    res.json({ msg: "...." })
-})
 
+// USERS....
+// Register with otp..
+Route.post('/users/otp', RegisterUser)  //register user and send OTP..
+Route.patch('/user/update/:userID', UpdateUser)  //Complete / Update user data..
 
 export default Route;

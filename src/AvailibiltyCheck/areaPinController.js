@@ -22,7 +22,6 @@ const CheckAvailability = async (req, res, next) => {
     // validate Body...
     const { error, value } = CheckAvailabilityValidateSchema.validate(req.body);
 
-    console.log(error, value);
 
     if (error) {
         next(createHttpError(401, 'Please fill the form carefully'))
@@ -35,9 +34,10 @@ const CheckAvailability = async (req, res, next) => {
         return next(createHttpError(401, "Pin Code Not found..."))
     }
 
-    if (getPinCode) {
-        return res.json(getPinCode)
-    }
+    return res.status(200).json({
+        success: true,
+        msg: "Pin code Found.."
+    })
 
 
     // const getPinCode = await areaPinAvailabilityModel.findOne({ value.areaPin })
