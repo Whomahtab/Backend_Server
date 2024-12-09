@@ -3,7 +3,7 @@ import Joi from "joi";
 import userModel from './userModel.js'
 import otpModel from './otpSchema.js'
 import userRegisterSchema from "./userRegisterValidateSchema.js";
-
+import cookieParser from "cookie-parser";
 
 
 
@@ -117,9 +117,15 @@ const verifyOTP = async (req, res, next) => {
         }
 
 
-
-
         // also verify otp Expire time 
+        // #
+        // # i will do it later...
+        // #
+
+        // 
+
+
+
 
         // after login user in our system..
 
